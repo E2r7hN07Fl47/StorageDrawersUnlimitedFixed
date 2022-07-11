@@ -1,6 +1,7 @@
 package com.raptor.sdu.proxy;
 
 import com.raptor.sdu.SDUnlimited;
+import com.raptor.sdu.event.RegisterOreDictionary;
 import com.raptor.sdu.event.RegistryEvents;
 import com.raptor.sdu.tileentity.SDUTileEntities;
 import com.raptor.sdu.tileentity.TileEntityDrawersUnlimited;
@@ -22,7 +23,7 @@ public class CommonProxy {
 		GameRegistry.registerTileEntity(TileEntityDrawersUnlimited.Slot1.class, new ResourceLocation(SDUnlimited.MODID, "basicdrawers.1"));
         GameRegistry.registerTileEntity(TileEntityDrawersUnlimited.Slot2.class, new ResourceLocation(SDUnlimited.MODID, "basicdrawers.2"));
         GameRegistry.registerTileEntity(TileEntityDrawersUnlimited.Slot4.class, new ResourceLocation(SDUnlimited.MODID, "basicdrawers.4"));
-		
+
 		MinecraftForge.EVENT_BUS.register(new RegistryEvents());
 	}
 	

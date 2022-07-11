@@ -2,6 +2,7 @@ package com.raptor.sdu;
 
 import java.io.File;
 
+import com.raptor.sdu.event.RegisterOreDictionary;
 import org.apache.logging.log4j.Logger;
 
 import com.raptor.sdu.proxy.CommonProxy;
@@ -15,7 +16,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
-@Mod(modid = SDUnlimited.MODID, version = SDUnlimited.VERSION, name = "Storage Drawers Unlimited",
+@Mod(modid = SDUnlimited.MODID, version = SDUnlimited.VERSION, name = "Storage Drawers Unlimited Fixed",
 		useMetadata = true)
 public class SDUnlimited {
 	public static final String MODID = "storagedrawersunlimited";
@@ -42,9 +43,12 @@ public class SDUnlimited {
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
+		RegisterOreDictionary.register(); // Removed from preInit as it was too early.
+		// Removing from preInit causes bug in JEI, when there is no recipe with this mod's items by ore dict.
+		// But registering in preInit causes bug, when no ore dict registered.
 		proxy.init(event);
 	}
-	
+
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
 		proxy.postInit(event);

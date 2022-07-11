@@ -3,7 +3,6 @@ package com.raptor.sdu.event;
 import static com.raptor.sdu.type.Mods.BLOCKS;
 import static com.raptor.sdu.type.Mods.ENABLED_MODS;
 import static com.raptor.sdu.type.Mods.ITEMS;
-import static net.minecraftforge.oredict.OreDictionary.WILDCARD_VALUE;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +27,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
@@ -53,10 +53,6 @@ public class RegistryEvents {
 			if((!isDrawer || anyDrawerEnabled)
 					&& (!isTrim || trimEnabled)) {
 				registry.register(block);
-				if(isDrawer)
-					OreDictionary.registerOre("drawerBasic", new ItemStack(block, 1, WILDCARD_VALUE));
-				else if(isTrim)
-					OreDictionary.registerOre("drawerTrim", new ItemStack(block, 1, WILDCARD_VALUE));
 			}
 		}
 	}

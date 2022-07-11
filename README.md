@@ -1,9 +1,9 @@
-# StorageDrawersUnlimited
+# StorageDrawersUnlimited Fixed
 
-A mod which adds many more Storage Drawers to the game using wood from other mods.
+Fork of original [StorageDrawersUnlimited 1.12.2](https://github.com/raptor494/StorageDrawersUnlimited/tree/1.12) with Ore Dictonary fix.
 
-The tools/makeresources.bat script is what I have used to auto-generate
-all models, textures, lang entries, and blockstates needed for the drawers from as little
-as a single base texture.
-tools/ResourceCreator is the actual program used to do this; it has many command-line options
-which alter what the program does or what it needs.
+Can be downloaded from [CurseForge](https://www.curseforge.com/minecraft/mc-mods/storage-drawers-unlimited-fixed) or [Modrinth](https://modrinth.com/mod/storage-drawers-unlimited-fixed).
+
+## Changelog
+### Version 1.3.1 (MC 1.12.2)
+1) Ore Dictionary registration mover to Init stage from preInit
